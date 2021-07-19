@@ -6,6 +6,9 @@ import numpy as np
 import statistics
 import pandas as pd
 
+# Import NumPy and the stats module from SciPy.
+import scipy.stats as sts
+
 
 # files to load
 city_data_to_load = "Resources/city_data.csv"
@@ -63,9 +66,6 @@ pyber_data_df = pd.merge(ride_data_df, city_data_df, how="left", on=['city', 'ci
 
 # Display the DataFrame
 pyber_data_df.head()
-
-
-## Create a Bubble Chart for Ride-Sharing Data
 
 
 # Create the Urban city DataFrame
@@ -146,9 +146,6 @@ plt.grid(True)
 plt.legend()
 
 
-
-
-
 #To create a bubble chart that showcases all the different city types in one chart, we'll combine our three scatter plot code blocks in one Jupyter
 
 # Add the scatter charts for each type of city.
@@ -199,6 +196,161 @@ plt.savefig("Analysis/Fig1.png")
 
 # Show the plot
 plt.show()
+
+
+# measures of central tendency = refer to the tendency of data to be toward gthe middle of the dataset. The three key measures of central tednency are the mean, median, and mode.
+
+
+# describe() function is a convenient tool to get a high-level summary statistics on a DataFrame or Series.
+# After running the function, the output will show the count, mean, standard deviation, minimum value, 25get_ipython().run_line_magic(",", " 50%, and 75% percentiles, and maximum value from a DataFrame column that has numeric values.")
+
+# Get summary statistics.
+urban_ride_count.describe()
+
+
+suburban_ride_count.describe()
+
+
+rural_ride_count.describe()
+
+
+# Calculate the mean of the ride count for each city type.
+round(urban_ride_count.mean(),2), round(suburban_ride_count.mean(),2), round(rural_ride_count.mean(),2)
+
+
+# Calculate the medium of the ride count for each city type.
+round(urban_ride_count.median(),2), round(suburban_ride_count.median(),2), round(rural_ride_count.median(),2)
+
+
+# Calculate the mode of the ride count for each city type.
+urban_ride_count.mode(), suburban_ride_count.mode(), rural_ride_count.mode()
+
+
+# Import NumPy and the stats module from SciPy.
+# import numpy as np
+# import scipy.stats as sts
+
+
+# Calculate the measures of central tendency for the ride count for the urban cities.
+mean_urban_ride_count = np.mean(urban_ride_count)
+print(f"The mean for the ride counts for urban trips is {mean_urban_ride_count:.2f}.")
+
+median_urban_ride_count = np.median(urban_ride_count)
+print(f"The median for the ride counts for urban trips is {median_urban_ride_count}.")
+
+mode_urban_ride_count = sts.mode(urban_ride_count)
+print(f"The mode for the ride counts for urban trips is {mode_urban_ride_count}.")
+
+
+# Calculate the measures of central tendency for the ride count for the suburban cities.
+mean_suburban_ride_count = np.mean(suburban_ride_count)
+print(f"The mean fo the rides counts for suburban trips is {mean_suburban_ride_count:.2f}.")
+
+median_suburban_ride_count = np.median(suburban_ride_count)
+print(f"The median for the ride counts for suburban trips is {median_suburban_ride_count}.")
+
+mode_suburban_ride_count = sts.mode(suburban_ride_count)
+print(f"The mode for the ride counts for suburban trips is {mode_suburban_ride_count}.")
+
+
+# Calculate the measures of central tendency for the ride count for the rural cities.
+mean_rural_ride_count = np.mean(rural_ride_count)
+print(f"The mean for the ride counts for rural trips {mean_rural_ride_count:.2f}.")
+
+median_rural_ride_count = np.median(rural_ride_count)
+print(f"The median for the ride counts for rural trips is {median_rural_ride_count}.")
+
+mode_rural_ride_count = sts.mode(rural_ride_count)
+print(f"The mode for the ride counts for rural trips is {mode_rural_ride_count}.")
+
+
+# Get the fares for the urban cities.
+urban_fares = urban_cities_df["fare"]
+urban_fares.head()
+
+
+# Calculate the measures of central tendency for the average fare for the urban cities.
+mean_urban_fares = np.mean(urban_fares)
+median_urban_fares = np.median(urban_fares)
+mode_urban_fares = sts.mode(urban_fares)
+
+
+# Get the fares for the suburban cities
+suburban_fares = suburban_cities_df["fare"]
+
+
+# Calculate the measures of central tendency for the average fare for the suburban cities.
+mean_suburban_fares = np.mean(suburban_fares)
+median_suburban_fares = np.median(suburban_fares)
+mode_suburban_fares = sts.mode(suburban_fares)
+
+
+# Get the fares for the rural cities
+rural_fares = rural_cities_df["fare"]
+
+
+# Calculate the measures of central tendency for the average fare for the rural cities.
+mean_rural_fares = np.mean(rural_fares)
+median_rural_fares = np.median(rural_fares)
+mode_rural_fares = sts.mode(rural_fares)
+
+
+print("URBAN")
+print(f"The mean fare price for urban trips is ${mean_urban_fares:.2f}.")
+print(f"The median fare price for urban trips is ${median_urban_fares:.2f}.")
+print(f"The mode fare price for urban trips is {mode_urban_fares}.")
+print("SUBURBAN")
+print(f"The mean fare price for suburban trips is ${mean_suburban_fares:2f}.")
+print(f"The median fare price for suburban trips is ${median_suburban_fares:.2f}.")
+print(f"The mode fare price for suburban trips is {mode_suburban_fares}.")
+print("RURAL")
+print(f"The mean fare price for rural trips is ${mean_rural_fares:.2f}.")
+print(f"The median fare price for rural trips is ${median_rural_fares:.2f}.")
+print(f"The mode fare price for rural trips is {mode_rural_fares}.")
+
+
+# Get the driver count data from the urban cities.
+urban_drivers = urban_cities_df["driver_count"]
+
+
+# Calculate the measures of central tendency for the average fare for the urban cities.
+mean_urban_drivers= np.mean(urban_drivers)
+median_urban_drivers = np.median(urban_drivers)
+mode_urban_drivers = sts.mode(urban_drivers)
+
+
+# Get the driver count data from the suburban cities.
+suburban_drivers = suburban_cities_df["driver_count"]
+
+
+# Calculate the measures of central tendency for the average fare for the suburban cities.
+mean_suburban_drivers= np.mean(suburban_drivers)
+median_suburban_drivers = np.median(suburban_drivers)
+mode_suburban_drivers = sts.mode(suburban_drivers)
+
+
+# Get the driver count data from the rural cities.
+rural_drivers = rural_cities_df["driver_count"]
+
+
+# Calculate the measures of central tendency for the average fare for the rurual cities.
+mean_rural_drivers= np.mean(rural_drivers)
+median_rural_drivers = np.median(rural_drivers)
+mode_rural_drivers = sts.mode(rural_drivers)
+
+
+print("URBAN")
+print(f"The mean drive count for urban trips {mean_urban_drivers:.1f}.")
+print(f"The median drive count for urban trips is {median_urban_drivers}.")
+print(f"The mode drive count for urban trips is {mode_urban_drivers}.")
+print("SUBURBAN")
+print(f"The mean drive count for suburban trips is {mean_suburban_drivers:1f}.")
+print(f"The median drive count for suburban trips is {median_suburban_drivers}.")
+print(f"The mode drive count for suburban trips is {mode_suburban_drivers}.")
+print("RURAL")
+print(f"The mean drive count for rural trips is {mean_rural_drivers:.2f}.")
+print(f"The median drive count for rural trips is {median_rural_drivers}.")
+print(f"The mode drive count for rural trips is {mode_rural_drivers}.")
 
 
 
