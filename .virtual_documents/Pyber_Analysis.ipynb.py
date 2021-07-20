@@ -474,4 +474,25 @@ plt.savefig("analysis/Fig6.png")
 plt.show()
 
 
+# Calculate the percentage of drivers for each city type.
+driver_percents = 100 * city_data_df.groupby(["type"]).sum()['driver_count'] / city_data_df["driver_count"].sum()
+driver_percents
+
+
+# Build percentage of rides by city type pie chart.
+plt.subplots(figsize=(10, 6))
+plt.pie(driver_percents, labels=["Rural", 'Suburban', "Urban"], explode=[0, 0, 0.1], colors=["gold", "lightskyblue", "lightcoral"], shadow=True, autopct='get_ipython().run_line_magic("1.1f%%',", " startangle=165)")
+
+plt.title("% of Total Drivers by City Type")
+# Change the default font size from 10 to 14.
+mpl.rcParams['font.size'] = 14
+#save figure
+plt.savefig("analysis/Fig7.png")
+#show figure
+plt.show()
+
+
+
+
+
 
