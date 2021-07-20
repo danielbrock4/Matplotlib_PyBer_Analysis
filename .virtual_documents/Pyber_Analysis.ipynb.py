@@ -353,4 +353,65 @@ print(f"The median drive count for rural trips is {median_rural_drivers}.")
 print(f"The mode drive count for rural trips is {mode_rural_drivers}.")
 
 
+# ax.boxplot() function takes an array inside the parentheses.
+
+# Create a box-and-whisker plot for the urban cities ride count.x_labels = ["Urban"]
+x_labels = ["Urban", "Suburban", "Rural"]
+ride_count_data = [urban_ride_count, suburban_ride_count, rural_ride_count]
+fig = plt.figure()
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.boxplot(ride_count_data, labels=x_labels)
+
+# Add the title, y-axis label and grid.
+ax.set_title('Ride Count Data (2019)', fontsize=20)
+ax.set_ylabel('Number of Rides', fontsize=14)
+ax.set_xlabel("City Types", fontsize=14)
+ax.set_yticks(np.arange(0, 45, step=3.0))
+ax.grid()
+# Save the figure.
+plt.savefig("analysis/Fig2.png")
+plt.show()
+
+
+# Get the city that matches 39.
+urban_city_outlier = urban_ride_count[urban_ride_count==39].index[0]
+print(f"{urban_city_outlier} has the highest rider count.")
+
+
+# Create a box-and-whisker plot for the fare data.
+x_labels = ["Urban", "Suburban", "Rural"]
+fares_data = [urban_fares, suburban_fares, rural_fares]
+fig = plt.figure()
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.boxplot(fares_data, labels=x_labels)
+
+# Add the title, y-axis label and grid.
+ax.set_title('Ride Fare Data (2019)', fontsize=20)
+ax.set_ylabel('Fare($USD)', fontsize=14)
+ax.set_xlabel("City Types", fontsize=14)
+ax.set_yticks(np.arange(0, 55, step=5.0))
+ax.grid()
+
+plt.savefig("analysis/Fig3")
+plt.show()
+
+
+# Create a box-and-whisker plot for the driver count data.
+x_labels = ["Urban", "Suburban", "Rural"]
+driver_count_data = [urban_driver_count, suburban_driver_count, rural_driver_count]
+fig = plt.figure()
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.boxplot(driver_count_data, labels=x_labels)
+
+# Add the title, y-axis label and grid.
+ax.set_title('Driver Count Data (2019)', fontsize=20)
+ax.set_ylabel('Number of Drivers', fontsize=14)
+ax.set_xlabel("City Types", fontsize=14)
+ax.set_yticks(np.arange(0, 90, step=5.0))
+ax.grid()
+
+plt.savefig("analysis/Fig4")
+plt.show()
+
+
 
