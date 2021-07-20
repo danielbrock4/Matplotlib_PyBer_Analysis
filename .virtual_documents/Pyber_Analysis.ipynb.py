@@ -6,6 +6,10 @@ import numpy as np
 import statistics
 import pandas as pd
 
+# Import mpl to change the plot configurations using rcParams.
+ #Matpltolib has a way to change the default parameters for charts by using the rcParams, which accesses the run and configure settings for the Matplotlib parameters.
+import matplotlib as mpl
+    
 # Import NumPy and the stats module from SciPy.
 import scipy.stats as sts
 
@@ -411,6 +415,40 @@ ax.set_yticks(np.arange(0, 90, step=5.0))
 ax.grid()
 
 plt.savefig("analysis/Fig4")
+plt.show()
+
+
+# Get the sum of the fares for each city type.
+sum_fares_by_type = pyber_data_df.groupby(["type"]).sum()["fare"]
+sum_fares_by_type
+
+
+# Get the sum of all the fares.
+total_fares = pyber_data_df["fare"].sum()
+total_fares
+
+
+# Calculate the percentage of fare for each city type.
+type_percents = 100 * sum_fares_by_type / total_fares
+type_percents
+
+
+# Calculate the percentage of fare for each city type in one cell.
+type_percents = 100 * pyber_data_df.groupby(["type"]).sum()['fare'] / pyber_data_df['fare'].sum()
+type_percents
+
+
+# Import mpl to change the plot configurations using rcParams.
+    #There is no parameter for fontsize in pie charts like there is for scatter plots. However, Matpltolib has a way to change the default parameters for charts by using the rcParams
+
+# Build the percentage of fares by city type pie chart.
+plt.subplots(figsize=(10, 6))
+plt.pie(type_percents, labels=["Rural", "Suburban", "Urban"], colors=["gold", "lightskyblue", "lightcoral"], explode=[0, 0, 0.1], autopct="get_ipython().run_line_magic("1.1f%%",", " shadow=True, startangle=150)")
+plt.title("% of Total Fares by City Type")
+# Change the default font size from 10 to 14 using mpl.rcParams["font.size"] = .
+mpl.rcParams['font.size'] = 14
+# Show Figure
+plt.savefig("analysis/fig5")
 plt.show()
 
 
