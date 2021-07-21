@@ -126,7 +126,7 @@ ax.set_ylabel("Fares($USD)", fontsize=12)
 lgnd = plt.legend(fontsize=12, loc="best", title="City Type")
 lgnd.get_title().set_fontsize(12)
 
-plt.savefig("analysis/fig8.png")
+plt.savefig("analysis/Fig8.png")
 
 
 
