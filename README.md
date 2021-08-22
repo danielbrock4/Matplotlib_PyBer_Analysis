@@ -16,7 +16,7 @@ Using Matplotlib, Python, Pandas, SciPy, and Jupyter Labs, I created visualizati
 **Analysis Results:**
   - Analysis Results Notebook: [PyBer_Challenge.ipynb](PyBer_Challenge.ipynb)
   - Analysis Line Chart: 
-![Webpage_Preview](Analysis/fig8.png)
+![Fig8](Analysis/fig8.png)
 
 ## Challange Project Summary
 
