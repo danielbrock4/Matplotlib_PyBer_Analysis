@@ -14,10 +14,10 @@ Using Matplotlib, Python, Pandas, SciPy, and Jupyter Labs, I created visualizati
 ## Challange Project Analysis
 
 **Analysis Results:**
-  - Analysis Results Notebook: [PyBer_Challenge.ipynb](PyBer_Challenge.ipynb)
+  - Results Notebook: [PyBer_Challenge.ipynb](PyBer_Challenge.ipynb)
   - Differences In Ride-Sharing Data Among Different City Types
-  - 
-  - Analysis Line Chart: 
+![Fig9](Analysis/fig9.png)
+  - Line Chart: 
 ![Fig8](Analysis/fig8.png)
 
 
