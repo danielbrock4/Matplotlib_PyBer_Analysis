@@ -20,7 +20,11 @@ Using Matplotlib, Python, Pandas, SciPy, and Jupyter Labs, I created visualizati
   - Line Chart: 
 ![Fig8](Analysis/fig8.png)
 
-
-
 ## Challange Project Summary
+
+### Three Recommendations for Addressing Disparities Among City Type
+
+1) Decrease Fares in Rural and Suburban Areas To Encourage More Riders 
+2) Shift Drivers from Urban Areas to Suburban Areas to Capture The 2nd Biggest Market 
+3) Decrease Drivers in Urban Areas to Increase Market Demand to Drive Up Fares 
 
