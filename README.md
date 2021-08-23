@@ -22,7 +22,7 @@ Using Matplotlib, Python, Pandas, SciPy, and Jupyter Labs, I created visualizati
 
 ## Challange Project Summary
 
-### Three Recommendations for Addressing Disparities Among City Type
+#### Three Recommendations for Addressing Disparities Among City Type
 
 1) Decrease Fares in Rural and Suburban Areas To Encourage More Riders 
 2) Shift Drivers from Urban Areas to Suburban Areas to Capture The 2nd Biggest Market 
