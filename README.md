@@ -1,4 +1,4 @@
-# Module 5: Using Matplotlib to Visualize & Analyze PyberRides Data
+Using Matplotlib to Visualize & Analyze PyberRides Data
 ## Resources
 
 - **Data Source:** 
